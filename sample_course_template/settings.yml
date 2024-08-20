@@ -1,0 +1,12 @@
+# Default settings are applied if this is blank. This can be safely deleted!
+
+# The title displayed for this portal
+# portal_title: "CodePath Courses"
+# The name of this organization
+# org_name: "CodePath"
+# The title of the units by which content is grouped (day, week, session)
+# unit_title: "Week"
+# Support email address
+# org_support_email: "support@codepath.com"
+# Github Content Repo (URL for courses content)
+# github_content_repo: "https://github.com/codepath/courses_content"

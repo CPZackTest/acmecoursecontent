@@ -1,0 +1,139 @@
+---
+modules:
+  title: "Resources"
+  label: "module"
+  directory: "modules"
+  file_prefix: "week"
+  icon: "home"
+
+overview:
+  title: "Overview"
+  label: "overview"
+  directory: "overviews"
+  file_prefix: "overview"
+  icon: "home"
+
+exercises:
+  title: "Lab"
+  label: "exercises"
+  directory: "exercises"
+  file_prefix: "exercise"
+  # icon: "tasks"
+
+assignments:
+  title: "Assignment"
+  label: "assignment"
+  directory: "assignments"
+  file_prefix: "project"
+  assignment_type: "Assignment"
+  # icon: "phone"
+
+hints:
+  title: "Hints"
+  label: "hints"
+  directory: "hints"
+  file_prefix: "tips"
+  # icon: "book"
+
+groups:
+  title: "Group"
+  label: "milestone"
+  directory: "groups"
+  file_prefix: "milestone"
+  assignment_type: "Group Milestone"
+  # icon: "user"
+
+readings:
+  title: "Reading"
+  label: "reading"
+  directory: "readings"
+  file_prefix: "reading"
+  icon: "book"
+
+links:
+  title: "Links"
+  label: "links"
+  directory: "links"
+  file_prefix: "links"
+
+questions:
+  title: "Q&A"
+  label: "questions"
+  directory: "questions"
+  file_prefix: "faq"
+  # icon: "question-sign"
+
+# iOS University
+discussion:
+  title: "Discussion"
+  label: "discussion"
+  directory: "discussion"
+  file_prefix: "discussion"
+
+# Android for School
+walkthrough:
+  title: "Walkthrough"
+  label: "walkthrough"
+  directory: "walkthroughs"
+  file_prefix: "walkthrough"
+
+challenge:
+  title: "Challenge"
+  label: "challenge"
+  directory: "challenges"
+  file_prefix: "challenge"
+
+# University Fast Track
+pod_activities:
+  title: "Pod Activity"
+  label: "pod_activities"
+  directory: "pod_activities"
+  file_prefix: "pod_activity"
+
+skills:
+  title: "Skills"
+  label: "skills"
+  directory: "skills"
+  file_prefix: "checklist"
+
+#  Admin
+instructor:
+  title: "Instruction"
+  label: "instruction"
+  directory: "instruction"
+  file_prefix: "notes"
+  permissions: ['Admin', 'Instructor']
+  icon: "apple"
+
+# iOS University
+student_leader:
+  title: "Student Leader"
+  label: "student_leader"
+  directory: "student_leader"
+  file_prefix: "notes"
+  permissions: ['Admin', 'Instructor', 'Organizer', 'Mentor']
+  icon: "info-sign"
+
+organizer:
+  title: "Organizer"
+  label: "organizer"
+  directory: "organizer"
+  file_prefix: "notes"
+  permissions: ['Admin', 'Instructor', 'Organizer', 'TA', 'Mentor']
+  icon: "info-sign"
+
+mentor:
+  title: "Mentor"
+  label: "mentor"
+  directory: "mentor"
+  file_prefix: "notes"
+  permissions: ['Admin', 'Instructor', 'Organizer', 'TA', 'Mentor']
+  icon: "info-sign"
+
+grading:
+  title: "Grading"
+  label: "grading"
+  directory: "grading"
+  file_prefix: "notes"
+  permissions: ['Admin', 'Instructor', 'Organizer', 'Grader']
+  icon: "list-alt"

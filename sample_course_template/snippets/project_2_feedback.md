@@ -1,0 +1,37 @@
+## Project 2: Grid Image Searcher
+
+This is the feedback guide for Project 2 - Grid Image Searcher. It covers the key issues that we see most often when engineers submit this homework.
+
+* **Did you name your Java activity semantically?** Your Java Activity should have a name like `TipCalculatorActivity` with the `Activity` suffix.
+
+* **Did you name your XML Layout file properly?** Your XML Layout should have a name such as `activity_tip_calculator.xml` that matches the name of your Java class.
+
+* **Did you properly name your views?** Every view in your layout XML file should have a proper id that semantically describes the purpose AND have a prefix indicating the view type. For example, the text field where you enter the total amount might be called `etTotalAmount`. `et` indicates this is an `EdiText` and the `TotalAmount` indicates the purpose of this textfield.
+
+* **Did you use string resources for your text?** In Android, you should always use string resources for your text rather than hardcoding string values in your layout files. See our [using string resources](http://guides.codepath.com/android/Using-String-Resources) for more details.
+
+* **Did you properly organize your source into folders?** In Android apps, try to start organizing your source code into the correct folders for better maintainability. Check out the [organizing your source](http://guides.codepath.com/android/Organizing-your-Source-Files) guide for more details. 
+
+* **Did you properly reuse the same method for both the initial image search and for pagination?** In your primary search activity, you should have **a single method** that is responsible for the initial query and subsequent pagination of image results. Avoid having two methods that both call the same url endpoint. Instead be sure to **declare your array and adapter on activity initialization** and then in the "initial" load, clear the adapter with `adapterResults.clear()` and then make your method responsible for executing the network image search accept parameters for `queryString` and `offset` to allow for pagination. When the async network request comes back with success, [convert the JSON to Java models](http://guides.codepath.com/android/Converting-JSON-to-Models) and then append the data into the adapter with `adapterResults.addAll(currentResults);` as explained in the [Adapter Guide](http://guides.codepath.com/android/Using-an-ArrayAdapter-with-ListView).
+
+* **Did you get infinite scrolling for images working?** One required user story is the infinite scrolling of images as the user scrolls down the GridView. You should implement this feature using the [Endless Scrolling](http://guides.codepath.com/android/Endless-Scrolling-with-AdapterViews-and-RecyclerView) cliffnotes. Make sure you can perform a search, scroll through the results (avoiding duplicates). Now try searching again with a new term, and verifying that the results clear and pagination works for this second query.
+
+* **Did you properly hook up a way to launch the settings activity?** A required user story is that the user can click to launch a settings activity where the user can select options such as size, color, type and site. This likely required you to setup an icon in the [ActionBar](http://guides.codepath.com/android/Defining-The-ActionBar) and then attach that to a click handler that [triggers an intent](http://guides.codepath.com/android/Using-Intents-to-Create-Flows).
+
+* **Did you properly setup spinners (with correct values) for user to be able to select filters?** For each filter, you should have setup spinners that provide a way for the user to select the appropriate value. Easiest way to work with spinners populated with static values is to use the `android:entries` property with a string array as described in the [Spinners Guide](http://guides.codepath.com/android/Working-with-Input-Views#spinners). Avoid using an adapter with the spinner when the entries are fixed.
+
+* **Did you unnecessarily invoke startActivity within the settings activity?** One common mistake we see is calling `startActivity` both when launching the settings activity and then again when the settings are completed and the user wants to return to the search activity. Conceptually, the settings page acts as a dialog so when the settings page is dismissed (user is done), rather than calling `startActivity`, you should simply call `finish` which returns the user to the previous screen. See the [Intent Guide](http://guides.codepath.com/android/Using-Intents-to-Create-Flows#explicit-intents) for more details.
+
+* **How did you pass the filters from the settings screen to the search activity?** Another key part of this assignment is how to "store" or pass the filter settings between the two activities. The user is searching on one activity and configuring settings for the search on the other. This means you need a way to set the filters and then access them in the other screen. This can be done with at least two approaches. First, you could [return the filters back as a result](http://guides.codepath.com/android/Using-Intents-to-Create-Flows#returning-data-result-to-parent-activity) when you launch the settings activity. Second, you could have stumbled upon the not-yet-covered [shared preferences](http://guides.codepath.com/android/Persisting-Data-to-the-Device#shared-preferences) which allows you to store key-value pairs to disk. Either approach works for this application.
+
+### Bonus
+
+In addition, consider the following bonus (optional) feedback:
+
+* **Did you consider using a ProgressBar to indicate loading?** We haven't covered progress bars yet, but there is actually a very easy progress bar built-in to the ActionBar itself which you can enable when a network request is being executed. Check out the [ProgressBar guide](http://guides.codepath.com/android/Handling-ProgressBars#progress-within-actionbar) if you want to try that out before we cover them in class.
+
+* **How did you represent the search filters?** One thing to consider is rather than sending and returning all the filter values separately as individual keys, you might have introduced a serializable model (i.e `SearchFilters.java`) representing all the filters which was passed back and forth in the activities in the bundle. This model would understand all supported filters, values and maybe even manage appending these filters into a query string.
+
+* **Did you consider allowing the user to share an image?** Totally optional but there is a concept called a "ShareAction" which makes sharing content relatively simple. You might have allowed a user to tap on an image and then share that image using this approach. Check out the [Sharing with Intents](http://guides.codepath.com/android/Sharing-Content-with-Intents) for more information. **Warning:** This is more difficult than you might expect because sharing an image requires you to share from the local disk (rather than remote url).
+
+* **Did you improve the performance of the GridView?** You may notice that the GridView **flickers** and appears choppy. To fix this we need to take a look at how to optimize the way we display our results. Applying [Performance Tips for Androidâ€™s ListView](http://lucasr.org/2012/04/05/performance-tips-for-androids-listview/) and the [ViewHolder](http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder) pattern along with [a few other tricks](http://stackoverflow.com/a/1541530) can go a long way.

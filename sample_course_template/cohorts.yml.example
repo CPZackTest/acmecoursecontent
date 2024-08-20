@@ -1,0 +1,8 @@
+---
+-
+  cohort_name: "SFAndroid-Uber-July2016"
+  location_id: 102 # Local SF
+  date_unit_offsets: { "MILESTONE": 0 } # Group milestones are due on Mondays for facilitated sessions
+  observer_mailing_list_name: "Google Group"
+  observer_mailing_list_link: "https://groups.google.com/forum/#!forum/july-2016-codepath-android-observers"
+  observer_mailing_list_email: "july-2016-codepath-android-observers@googlegroups.com"

@@ -1,0 +1,7 @@
+# These are the links at the top and bottom of the unit sidebar
+
+header:
+  - ["Overview", "Bootcamp Structure"]
+
+footer:
+  - ["Group Project"]
