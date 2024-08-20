@@ -1,6 +1,6 @@
-## Week 1 Resources - Blank Project!
+## Week 1 Resources - Acme Course!
 
-Welcome to a blank course project!
+Welcome to Acme Course!
 
 ### Referencing Content
 
